@@ -165,7 +165,6 @@
 //     case 'efectivo':
 //         console.log('Usted pago en efectivo');
 //         break;
-//     case 'tarjeta':
 //         console.log('Usted pago en tarjeta');
 //         break;
 //     case 'cheque':
