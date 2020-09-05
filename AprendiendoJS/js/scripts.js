@@ -93,17 +93,97 @@
 // console.log(viaje);
 
 // Object literal
-const persona = {
-    nombre: 'Axel'
-};
+// const persona = {
+//     nombre: 'Axel',
+//     edad: 80,
+//     anioNac: function(){
+//         return new Date().getFullYear() - this.edad;
+//     }
+// };
+// console.log(persona.anioNac())
 
 // Object constructor
-function Tarea (nombre, urgencia){
-    this.nombre = nombre;
-    this.urgencia = urgencia;
+// function Tarea (nombre, urgencia){
+//     this.nombre = nombre;
+//     this.urgencia = urgencia;
+// }
+
+// // Crear nuevas tareas
+// const tarea1 = new Tarea('Aprender JS', 'Urgente');
+
+// console.log(tarea1);
+
+// Clases
+// class Tarea {
+//     constructor(nombre, urgencia){
+//         this.nombre = nombre;
+//         this.urgencia = urgencia;
+//     }
+// }
+// const tarea1 = new Tarea('Aprender JS', 'Urgente');
+// const tarea2 = new Tarea('Correr', 'Urgente');
+// const tarea3 = new Tarea('Bajar', 'medio');
+// const tarea4 = new Tarea('Subir', '0');
+// console.log(tarea1);
+// console.log(tarea2);
+// console.log(tarea3);
+// console.log(tarea4);
+
+// IF
+// let puntaje = 1000;
+// let totalcarrito = 1200;
+// let tarjeta = false;
+
+// if (puntaje === 1000){
+//     console.log('El puntaje es de ' + puntaje);
+// } else{
+//     console.log('El puntaje no es igual a 1000');
+// }
+// Operador OR ||
+// if (puntaje > totalcarrito || tarjeta){
+//     console.log('Fondos suficientes');
+// } else{
+//     console.log('Fondos insuficientes');
+// }
+
+// Operador &&
+// let hora = 14;
+// if (hora>0 && hora <=12){
+// console.log('Buenos Dias');
+// } else if(hora>12 && hora <= 18){
+//     console.log('Buenas Tardes');
+// }else if(hora>18 && hora <=24){
+//     console.log('Buenas Noches');
+// }else{
+//     console.log('Hora no disponible');
+// }
+
+// Switch
+// const metodoPago = 'Tarjeta';
+
+// switch (metodoPago){
+//     case 'efectivo':
+//         console.log('Usted pago en efectivo');
+//         break;
+//     case 'tarjeta':
+//         console.log('Usted pago en tarjeta');
+//         break;
+//     case 'cheque':
+//         console.log('Usted pago en cheque');
+//         break;
+//     default:
+//         console.log('Metodo de pago invalido')            
+// }
+
+// For loop
+const carrito = ['Producto1', 'producto2', 'producto3'];
+console.log(carrito.length)
+for (let i = 0; i < carrito.length; i++) {
+    console.log(` En el carrito hay: ${carrito[i]} `);
 }
-
-// Crear nuevas tareas
-const tarea1 = new Tarea('Aprender JS', 'Urgente');
-
-console.log(tarea1);
+// While loop 
+let i = 0;
+while (i<carrito.length) {
+    console.log(carrito[i]);
+    i++;
+}
