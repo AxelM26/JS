@@ -203,14 +203,38 @@ const cliente = {
         }
     }
 }
-// Forma anterior
-const nombreCliente = cliente.nombre;
-const ubicacionCliente = cliente.datos.ubicacion.pais;
-// console.log(nombreCliente);
-console.log(ubicacionCliente);
+// // Forma anterior
+// const nombreCliente = cliente.nombre;
+// const ubicacionCliente = cliente.datos.ubicacion.pais;
+// // console.log(nombreCliente);
+// console.log(ubicacionCliente);
 
+// // Forma Actual
+// let {nombre, cuenta, datos} = cliente;
+// let{datos:{ubicacion:{ciudad}}}= cliente;
+// console.log(ciudad);
 
-// Forma Actual
-let {nombre, cuenta, datos} = cliente;
-let{datos:{ubicacion:{ciudad}}}= cliente;
-console.log(ciudad);
+// Uso de APi con Fetch
+descargarusuarios(30);
+function descargarusuarios(cantidad) {
+const api = `https://api.randomuser.me/?nat=US&results=${cantidad}`;
+
+// Lamado del FETCH
+    fetch(api)
+     .then(respuesta => respuesta.json())
+     .then(datos => imprimirHTML(datos.results));
+}
+function imprimirHTML(datos){
+    datos.forEach(
+        usuario => {
+            const li = document.createElement('li');
+            const {name: {first}, name: {last}, picture: {medium}, nat} = usuario;
+
+            li.innerHTML = `
+                nombre: ${first} ${last}
+                pais: ${nat}
+                imagen: <img src="${medium}">
+            `;
+            document.querySelector('#app').appendChild(li);
+        });
+}
