@@ -229,7 +229,6 @@ function imprimirHTML(datos){
         usuario => {
             const li = document.createElement('li');
             const {name: {first}, name: {last}, picture: {medium}, nat} = usuario;
-
             li.innerHTML = `
                 nombre: ${first} ${last}
                 pais: ${nat}
