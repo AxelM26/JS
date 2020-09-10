@@ -175,14 +175,42 @@
 // }
 
 // For loop
-const carrito = ['Producto1', 'producto2', 'producto3'];
-console.log(carrito.length)
-for (let i = 0; i < carrito.length; i++) {
-    console.log(` En el carrito hay: ${carrito[i]} `);
+// const carrito = ['Producto1', 'producto2', 'producto3'];
+// console.log(carrito.length)
+// for (let i = 0; i < carrito.length; i++) {
+//     console.log(` En el carrito hay: ${carrito[i]} `);
+// }
+// // While loop 
+// let i = 0;
+// while (i<carrito.length) {
+//     console.log(carrito[i]);
+//     i++;
+// }
+
+//Destructuring
+
+const cliente = {
+    nombre: 'Alejandra',
+    cuenta: 'Premium',
+    datos: {
+        ubicacion: {
+            ciudad: 'Tegucigalpa',
+            pais: 'Honduras'
+        },
+        fecha:{
+            desde: '10-12-2020',
+            saldo: 4000
+        }
+    }
 }
-// While loop 
-let i = 0;
-while (i<carrito.length) {
-    console.log(carrito[i]);
-    i++;
-}
+// Forma anterior
+const nombreCliente = cliente.nombre;
+const ubicacionCliente = cliente.datos.ubicacion.pais;
+// console.log(nombreCliente);
+console.log(ubicacionCliente);
+
+
+// Forma Actual
+let {nombre, cuenta, datos} = cliente;
+let{datos:{ubicacion:{ciudad}}}= cliente;
+console.log(ciudad);
